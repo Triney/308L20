@@ -1,0 +1,22 @@
+--cpu Cortex-M0
+".\debug\startup_lpc11xx.o"
+".\debug\system_lpc11xx.o"
+".\debug\core_cm0.o"
+".\debug\main.o"
+".\debug\pandali_cmd.o"
+".\debug\sft_tmr.o"
+".\debug\sft_tmr_apps.o"
+".\debug\timer32.o"
+".\debug\timer16.o"
+".\debug\wdt.o"
+".\debug\gpio.o"
+".\debug\uart.o"
+".\debug\dali_master.o"
+".\debug\dali_master_3rd.o"
+".\debug\dali_master_2nd.o"
+".\debug\i2c1.o"
+".\debug\drv_keyscan.o"
+--strict --scatter ".\debug\dali_master.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\dali_master.map" -o .\debug\dali_master.axf

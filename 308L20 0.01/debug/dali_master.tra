@@ -1,0 +1,31 @@
+*** Creating Trace Output File '.\debug\dali_master.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\debug\startup_lpc11xx.o"'
+### List of Objects: adding '".\debug\system_lpc11xx.o"'
+### List of Objects: adding '".\debug\core_cm0.o"'
+### List of Objects: adding '".\debug\dali_master.o"'
+### List of Objects: adding '".\debug\i2c1.o"'
+### List of Objects: adding '".\debug\gpio.o"'
+### List of Objects: adding '".\debug\main.o"'
+### List of Objects: adding '".\debug\wdt.o"'
+### List of Objects: adding '".\debug\timer32.o"'
+### List of Objects: adding '".\debug\timer16.o"'
+### List of Objects: adding '".\debug\dali_master_2nd.o"'
+### List of Objects: adding '".\debug\dali_master_3rd.o"'
+### List of Objects: adding '".\debug\uart.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 ".\debug\startup_lpc11xx.o" ".\debug\system_lpc11xx.o" ".\debug\core_cm0.o" ".\debug\dali_master.o" ".\debug\i2c1.o" ".\debug\gpio.o" ".\debug\main.o" ".\debug\wdt.o" ".\debug\timer32.o" ".\debug\timer16.o" ".\debug\dali_master_2nd.o" ".\debug\dali_master_3rd.o" ".\debug\uart.o" --strict --scatter ".\debug\dali_master.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\dali_master.map" -o ".\debug\dali_master.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\debug\dali_master.axf'
+### ADS-LD Command File: '.\debug\dali_master.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\debug\dali_master.lnp', Handle=0x0000068C
+### Writing '.lnp' file
+### ADS-LD Command file '.\debug\dali_master.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

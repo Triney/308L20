@@ -1,0 +1,165 @@
+Dependencies for Project 'dali_master', Target 'dali_master': (DO NOT MODIFY !)
+F (.\startup_LPC11xx.s)(0x5370201C)(--cpu Cortex-M0 -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx--list .\startup_lpc11xx.lst --xref -o .\debug\startup_lpc11xx.o --depend .\debug\startup_lpc11xx.d)
+F (.\src\system_LPC11xx.c)(0x5370201C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\system_lpc11xx.o --omf_browse .\debug\system_lpc11xx.crf --depend .\debug\system_lpc11xx.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+F (.\src\core_cm0.c)(0x5370201C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\core_cm0.o --omf_browse .\debug\core_cm0.crf --depend .\debug\core_cm0.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+F (.\src\dali_master.c)(0x54FAFEEC)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\dali_master.o --omf_browse .\debug\dali_master.crf --depend .\debug\dali_master.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_2nd.h)(0x54E56BC9)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_3rd.h)(0x54E570E0)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer32.h)(0x54E56F75)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\main.h)(0x54FB0DBA)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\PanDali_cmd.h)(0x54EC99BB)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\sft_tmr.h)(0x54F07899)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\keyscan.h)(0x54DCBE12)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\sft_time_apps.h)(0x54F08672)
+F (.\src\i2c1.c)(0x5370201C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\i2c1.o --omf_browse .\debug\i2c1.crf --depend .\debug\i2c1.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+F (.\src\gpio.c)(0x54FC3BE7)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\gpio.o --omf_browse .\debug\gpio.crf --depend .\debug\gpio.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer32.h)(0x54E56F75)
+F (.\main\main.c)(0x54FC4354)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\main.o --omf_browse .\debug\main.crf --depend .\debug\main.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_2nd.h)(0x54E56BC9)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_3rd.h)(0x54E570E0)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer32.h)(0x54E56F75)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\main.h)(0x54FB0DBA)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\PanDali_cmd.h)(0x54EC99BB)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\sft_tmr.h)(0x54F07899)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\keyscan.h)(0x54DCBE12)
+F (.\src\wdt.c)(0x5370201C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\wdt.o --omf_browse .\debug\wdt.crf --depend .\debug\wdt.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+F (.\src\timer32.c)(0x54F071D0)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\timer32.o --omf_browse .\debug\timer32.crf --depend .\debug\timer32.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer32.h)(0x54E56F75)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\main.h)(0x54FB0DBA)
+F (.\src\timer16.c)(0x5370201C)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\timer16.o --omf_browse .\debug\timer16.crf --depend .\debug\timer16.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+F (.\src\dali_master_2nd.c)(0x54EF2F68)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\dali_master_2nd.o --omf_browse .\debug\dali_master_2nd.crf --depend .\debug\dali_master_2nd.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_2nd.h)(0x54E56BC9)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+F (.\src\dali_master_3rd.c)(0x54EF3087)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\dali_master_3rd.o --omf_browse .\debug\dali_master_3rd.crf --depend .\debug\dali_master_3rd.d)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_3rd.h)(0x54E570E0)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+F (.\src\uart.c)(0x54EF3404)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\uart.o --omf_browse .\debug\uart.crf --depend .\debug\uart.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+F (.\src\PanDali_cmd.c)(0x54FAFAAE)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\pandali_cmd.o --omf_browse .\debug\pandali_cmd.crf --depend .\debug\pandali_cmd.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\PanDali_cmd.h)(0x54EC99BB)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\main.h)(0x54FB0DBA)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\i2c1.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\uart.h)(0x54EF3404)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer32.h)(0x54E56F75)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\wdt.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_2nd.h)(0x54E56BC9)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master_3rd.h)(0x54E570E0)
+F (.\src\sft_tmr.c)(0x54F15908)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\sft_tmr.o --omf_browse .\debug\sft_tmr.crf --depend .\debug\sft_tmr.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\sft_tmr.h)(0x54F07899)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\keyscan.h)(0x54DCBE12)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+F (.\src\sft_tmr_apps.c)(0x54F1582E)(-c --cpu Cortex-M0 -g -O0 --apcs=interwork -I.\inc-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC11xx-o .\debug\sft_tmr_apps.o --omf_browse .\debug\sft_tmr_apps.crf --depend .\debug\sft_tmr_apps.d)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\sft_tmr.h)(0x54F07899)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\keyscan.h)(0x54DCBE12)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\lpc11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\core_cm0.h)(0x5370201C)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\system_LPC11xx.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\gpio.h)(0x54EC7370)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\timer16.h)(0x5370201C)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\main.h)(0x54FB0DBA)
+I (F:\lds\PanelDali_150205\DM320-DALI code v1.04\inc\dali_master.h)(0x54FB0DCF)
+I (C:\Keil\ARM\RV31\INC\stdbool.h)(0x4F58357C)
+I (C:\Keil\ARM\RV31\INC\stdint.h)(0x4F58357C)
