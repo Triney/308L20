@@ -3,7 +3,170 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-F:\lds\PanelDali_150205\DM320-DALI code v1.04\dali_master.uvproj
-Project File Date:  02/28/2015
+F:\norya\308L20\308L20 0.01\dali_master.uvproj
+Project File Date:  05/08/2015
 
 <h2>Output:</h2>
+Build target 'R308L20'
+assembling startup_LPC11xx.s...
+compiling main.c...
+compiling uart.c...
+src\uart.c(279): error:  #20: identifier "RS485_BeginSend" is undefined
+".\debug\dali_master.axf" - 1 Errors, 0 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling uart.c...
+src\uart.c(279): error:  #20: identifier "RS485_BeginSend" is undefined
+compiling dali_master.c...
+src\dali_master.c(1101): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1103): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+src\dali_master.c(1241): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 2 Errors, 2 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling uart.c...
+compiling dali_master.c...
+src\dali_master.c(1101): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1103): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+src\dali_master.c(1241): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 1 Errors, 2 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling dali_master.c...
+src\dali_master.c(1101): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1103): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+linking...
+Program Size: Code=26888 RO-data=768 RW-data=516 ZI-data=6884  
+FromELF: creating hex file...
+".\debug\dali_master.axf" - 0 Errors, 2 Warning(s).
+Build target 'R308L20'
+compiling main.c...
+main\main.c(121): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(145): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(395): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(412): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(424): error:  #20: identifier "CHANNELNUMS" is undefined
+compiling PanDali_cmd.c...
+src\PanDali_cmd.c(14): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(83): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(162): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(192): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(216): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(247): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(269): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(300): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(314): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(346): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(378): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(455): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(491): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(514): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(554): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(584): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(610): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(635): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(667): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(691): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(711): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(741): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(890): error:  #20: identifier "CHANNELNUMS" is undefined
+src\PanDali_cmd.c(958): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\PanDali_cmd.c(960): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+src\PanDali_cmd.c(1113): error:  #20: identifier "CHANNELNUMS" is undefined
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+src\sft_tmr_apps.c(90): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 30 Errors, 4 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling main.c...
+main\main.c(121): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(145): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(395): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(412): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(424): error:  #20: identifier "CHANNELNUMS" is undefined
+compiling PanDali_cmd.c...
+src\PanDali_cmd.c(959): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\PanDali_cmd.c(961): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+src\sft_tmr_apps.c(90): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 6 Errors, 4 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling main.c...
+main\main.c(121): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(145): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(395): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(412): error:  #20: identifier "CHANNELNUMS" is undefined
+main\main.c(424): error:  #20: identifier "CHANNELNUMS" is undefined
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+src\sft_tmr_apps.c(90): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 6 Errors, 2 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling main.c...
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+src\sft_tmr_apps.c(90): error:  #165: too few arguments in function call
+".\debug\dali_master.axf" - 1 Errors, 2 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+linking...
+Program Size: Code=26864 RO-data=768 RW-data=516 ZI-data=6884  
+FromELF: creating hex file...
+".\debug\dali_master.axf" - 0 Errors, 2 Warning(s).
+Build target 'R308L20'
+compiling sft_tmr_apps.c...
+src\sft_tmr_apps.c(45): warning:  #550-D: variable "i" was set but never used
+src\sft_tmr_apps.c(71): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
+compiling dali_master.c...
+src\dali_master.c(187): error:  #147: declaration is incompatible with "channelDataType ChannelData[192]" (declared at line 162 of ".\inc\PanDali_cmd.h")
+src\dali_master.c(869): warning:  #175-D: subscript out of range
+src\dali_master.c(871): warning:  #175-D: subscript out of range
+src\dali_master.c(874): warning:  #175-D: subscript out of range
+src\dali_master.c(876): warning:  #175-D: subscript out of range
+src\dali_master.c(1102): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1104): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+".\debug\dali_master.axf" - 1 Errors, 8 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling dali_master.c...
+src\dali_master.c(187): error:  #147: declaration is incompatible with "channelDataType ChannelData[192]" (declared at line 162 of ".\inc\PanDali_cmd.h")
+src\dali_master.c(869): warning:  #175-D: subscript out of range
+src\dali_master.c(871): warning:  #175-D: subscript out of range
+src\dali_master.c(874): warning:  #175-D: subscript out of range
+src\dali_master.c(876): warning:  #175-D: subscript out of range
+src\dali_master.c(1102): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1104): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+".\debug\dali_master.axf" - 1 Errors, 6 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling main.c...
+main\main.c(56): error:  #147: declaration is incompatible with "channelDataType ChannelData[12]" (declared at line 163 of ".\inc\PanDali_cmd.h")
+compiling PanDali_cmd.c...
+src\PanDali_cmd.c(959): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\PanDali_cmd.c(961): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+compiling dali_master.c...
+src\dali_master.c(869): warning:  #175-D: subscript out of range
+src\dali_master.c(871): warning:  #175-D: subscript out of range
+src\dali_master.c(874): warning:  #175-D: subscript out of range
+src\dali_master.c(876): warning:  #175-D: subscript out of range
+src\dali_master.c(1102): warning:  #550-D: variable "pbUsbBackwardFrameAnswer" was set but never used
+src\dali_master.c(1104): warning:  #550-D: variable "pbWaitForAnswer" was set but never used
+".\debug\dali_master.axf" - 1 Errors, 8 Warning(s).
+Target not created
+Build target 'R308L20'
+compiling main.c...
+linking...
+Program Size: Code=26864 RO-data=768 RW-data=516 ZI-data=2924  
+FromELF: creating hex file...
+".\debug\dali_master.axf" - 0 Errors, 0 Warning(s).

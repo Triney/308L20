@@ -8,19 +8,6 @@ uint16_t key_released = 0 ,\
 uint32_t long_press_time[MAX_KEYS];
 
 
-uint8_t KeyValue(x) {switch((x))\
-{\
-    case 0:\
-        return GPIOStatusValue(0,6);\
-    case 1:\
-        return GPIOStatusValue(2,4);\
-    case 2:\
-        return GPIOStatusValue(0,3);\
-    case 3:\
-        return GPIOStatusValue(2,6);\
-    default:\
-        return 0;\
-}}
 
 
 void Panel_KeyInit(void)

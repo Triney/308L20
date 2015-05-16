@@ -12,6 +12,7 @@
 #include "dali_master_2nd.h"
 #include "dali_master_3rd.h"
 
+#include "Apps.h"
 
 #ifndef NULL_PTR
     #define NULL_PTR    (0)
@@ -34,37 +35,37 @@
 
 enum Dim_ins
 {
-    Preset                  = 0xfe,
-    Fade_area_to_off        = 0xfd,
-    Program_level_to_preset = 0xfc,
-    Reset_to_preset         = 0xfb,
-    Configture_DMX          = 0xfa,
-    Set_jion                = 0xf9,
-    Panel_disable           = 0xf8,
-    Panel_enable            = 0xf7,
-    Panic                   = 0xf6,
-    Un_panic                = 0xf5,
-    PE_Speed                = 0xf4,
-    Suspend_PE              = 0xf3,
-    Restart_PE              = 0xf2,
-    Set_air_link            = 0xf1,
-    Clear_air_link          = 0xf0,
-    Request_area_link       = 0xef,
-    Relply_area_link        = 0xee,
-    Suspend_motion          = 0xed,
-    Resume_motion           = 0xec,
-    Disable_motion_detector = 0xeb,
+    Preset                          = 0xfe,
+    Fade_area_to_off                = 0xfd,
+    Program_level_to_preset         = 0xfc,
+    Reset_to_preset                 = 0xfb,
+    Configture_DMX                  = 0xfa,
+    Set_jion                        = 0xf9,
+    Panel_disable                   = 0xf8,
+    Panel_enable                    = 0xf7,
+    Panic                           = 0xf6,
+    Un_panic                        = 0xf5,
+    PE_Speed                        = 0xf4,
+    Suspend_PE                      = 0xf3,
+    Restart_PE                      = 0xf2,
+    Set_air_link                    = 0xf1,
+    Clear_air_link                  = 0xf0,
+    Request_area_link               = 0xef,
+    Relply_area_link                = 0xee,
+    Suspend_motion                  = 0xed,
+    Resume_motion                   = 0xec,
+    Disable_motion_detector         = 0xeb,
     Disable_motion_detector_this_preset = 0xea,
     Enable_motion_detector_current_preset = 0xe9,
     Disable_motion_detector_all_preset = 0xe8,
     Enable_motion_detector_all_preset  = 0xe7,
-    Set_rmask               = 0xe6,
-    Fade_channel_area_to_level = 0xe5,
-    Reply_with_channel_levle= 0xe4,
-    Request_channel_level   = 0xe3,
-    Reply_current_preset    = 0xe2,
-    Request_current_preset  = 0xe1,
-    Preset_offset_and_bank  = 0xe0,
+    Set_rmask                          = 0xe6,
+    Fade_channel_area_to_level          = 0xe5,
+    Reply_with_channel_levle            = 0xe4,
+    Request_channel_level               = 0xe3,
+    Reply_current_preset                = 0xe2,
+    Request_current_preset              = 0xe1,
+    Preset_offset_and_bank              = 0xe0,
     Select_current_preset   = 0xdf,
     Save_current_preset     = 0xde,
     Restore_saved_preset    = 0xdd,
@@ -159,7 +160,7 @@ extern uint8_t UARTBuffer[20];
 extern uint8_t Box;
 extern uint8_t xcode;
 	
-extern channelDataType	ChannelData[192];
+extern channelDataType	ChannelData[CHANNELNUMS];
     
 void ProcessCMD(void);
 extern uint8_t IsAreaAccept(uint8_t indx);	

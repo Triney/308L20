@@ -58,7 +58,7 @@ void RS485_BeginSend(void *parameter)
 }
 
 
-void Sft_Init_all_timers(void)
+void Sft_Init_all_timers(void *parameter)
 {
     stTimer20ms =  mtimer_create("T_20ms",
                                     Instead_of_SysTick_Handler_at_v1_02, (void*)0,
@@ -87,7 +87,7 @@ void app_DelayStart(void *parameter)
 {
     if (MT_FULL ==  stLedBlink )
     {
-        Sft_Init_all_timers();
+        Sft_Init_all_timers( (void *) 0);
     }
     mtimer_start(stCheckSend);
     return;

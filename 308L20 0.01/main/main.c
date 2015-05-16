@@ -12,6 +12,7 @@
 #include "main.h"
 #include "PanDali_cmd.h"
 #include "sft_tmr.h"
+#include "Apps.h"
 /********************************************************/
 #define K1_OFF()		{LPC_GPIO3->DATA &= ~(1<<5);}
 #define K2_OFF()		{LPC_GPIO2->DATA &= ~(1<<1);}
@@ -52,7 +53,7 @@ volatile uint16_t	dali_counter_1st = 0; 		  //用来标志需要发送的通道数
 volatile uint16_t	dali_counter_2nd = 0;
 volatile uint16_t	dali_counter_3rd = 0;
 //volatile uint8_t CH_temp_data[192];
-extern channelDataType	ChannelData[192];
+extern channelDataType	ChannelData[CHANNELNUMS];
 extern uint8_t 		UARTBuffer[20];
 CirBufType DaliCirBuffer;
 CirBufType DaliCirBuffer_2nd;
@@ -118,7 +119,7 @@ void DaliCirBufInit(CirBufType *DaliCirBuffer)
 void init_channel_data(void)
 {	
 	uint8_t	i;
-	for(i=192;i!=0;i--)
+	for(i=CHANNELNUMS;i!=0;i--)
 	{
 		ChannelData[i-1].GoalLevel=0xff;
 		ChannelData[i-1].OringalLevel=0xff;
@@ -142,11 +143,11 @@ void Get_Channel_Param(void)
 
 	uint8_t idx;
 	uint16_t Num;
-	uint8_t CH_temp_data[192];
+	uint8_t CH_temp_data[CHANNELNUMS];
 //	CH_temp_data[0]=0;
 	m24xx_read(EEPROM_24XX256,0xF19,0,&aux_press,1);
 	m24xx_read(EEPROM_24XX256,0xF21,0,&aux_release,1);
-	for(Num=0;Num<192;Num++)
+	for(Num=0;Num<CHANNELNUMS;Num++)
 	{
 		if(m24xx_read(EEPROM_24XX256,DALI_Data_base_addr+Num*4,0,CH_temp_data,1)==I2C_NO_ERR)	 //此处if语句更新了每个通道的DALI短地址
 		{
@@ -155,60 +156,60 @@ void Get_Channel_Param(void)
 		} 
 	}
 
-	if(m24xx_read(EEPROM_24XX256,Area_addr,0,CH_temp_data,192)==I2C_NO_ERR)	 //更新了每个通道所属的区
+	if(m24xx_read(EEPROM_24XX256,Area_addr,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)	 //更新了每个通道所属的区
 	{
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].Area=CH_temp_data[Num];	
 		} 
 	}
-	if(m24xx_read(EEPROM_24XX256,Area_append_addr,0,CH_temp_data,192)==I2C_NO_ERR)	 //更新了每个通道所属的附加区
+	if(m24xx_read(EEPROM_24XX256,Area_append_addr,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)	 //更新了每个通道所属的附加区
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].AppendArea=CH_temp_data[Num];	
 		} 
 	}
-	if(m24xx_read(EEPROM_24XX256,Logic_Channel_addr,0,CH_temp_data,192)==I2C_NO_ERR)	//更新逻辑通道号
+	if(m24xx_read(EEPROM_24XX256,Logic_Channel_addr,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)	//更新逻辑通道号
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].LogicChannel=CH_temp_data[Num];	
 		} 
 	}
-	if(m24xx_read(EEPROM_24XX256,Max_level_addr,0,CH_temp_data,192)==I2C_NO_ERR)		//更新最大电平
+	if(m24xx_read(EEPROM_24XX256,Max_level_addr,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)		//更新最大电平
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].MaxLevel=((~CH_temp_data[Num])+1);	
 		} 
 	}
-	if(m24xx_read(EEPROM_24XX256,Switch_level_addr,0,CH_temp_data,192)==I2C_NO_ERR)	   //更新开关电平
+	if(m24xx_read(EEPROM_24XX256,Switch_level_addr,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)	   //更新开关电平
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].SwitchLevel=CH_temp_data[Num];	
 		} 
 	}
 	if(m24xx_read(EEPROM_24XX256,Duplicate_addr,0,CH_temp_data,24)==I2C_NO_ERR)		  //更新重复标志位
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].flag_bit |= ((CH_temp_data[(Num/8)]>>(Num%8))&0x01);	
 		} 
 	}
 	if(m24xx_read(EEPROM_24XX256,Switch_flag_addr,0,CH_temp_data,24)==I2C_NO_ERR)	  //更新开关电平标志位
 	{																				 
-		for(Num=0;Num<192;Num++)
+		for(Num=0;Num<CHANNELNUMS;Num++)
 		{
 			ChannelData[Num].flag_bit |= (((CH_temp_data[(Num/8)]>>(Num%8))&0x01)<<1);	
 		} 
 	}
 	 for(idx=1;idx<4;idx++)
 	 {
-	 	if(m24xx_read(EEPROM_24XX256,AreaLink_addr+192*idx,0,CH_temp_data,192)==I2C_NO_ERR)
+	 	if(m24xx_read(EEPROM_24XX256,AreaLink_addr+CHANNELNUMS*idx,0,CH_temp_data,CHANNELNUMS)==I2C_NO_ERR)
 		{
-			for(Num=0;Num<192;)
+			for(Num=0;Num<CHANNELNUMS;)
 			{
 				ChannelData[idx+(Num/4)].AreaLink = CH_temp_data[Num/4];
 				Num+=4;
@@ -392,10 +393,10 @@ void DeviceInit(void)
 void Get_Offset(void)
 {
 	uint8_t i;
-	uint8_t OffsetValue[192];
-	if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+3)*192,0,OffsetValue,192)==I2C_NO_ERR)
+	uint8_t OffsetValue[CHANNELNUMS];
+	if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+3)*CHANNELNUMS,0,OffsetValue,CHANNELNUMS)==I2C_NO_ERR)
 	{
-		for(i=0;i<192;i++)
+		for(i=0;i<CHANNELNUMS;i++)
 		{
 			ChannelData[i].PresetOffset = OffsetValue[i];
 			if(ChannelData[i].PresetOffset == 0xff)
@@ -409,33 +410,33 @@ void Get_Offset(void)
 void Set_Offset(void)
 {
 	uint8_t i;
-	uint8_t OffsetValue[192];
-	for(i=0;i<192;i++)
+	uint8_t OffsetValue[CHANNELNUMS];
+	for(i=0;i<CHANNELNUMS;i++)
 	{
 		OffsetValue[i] = ChannelData[i].PresetOffset;
 	}
-	m24xx_write(EEPROM_24XX256,Preset_addr+(xcode+3)*192,0,OffsetValue,192);
+	m24xx_write(EEPROM_24XX256,Preset_addr+(xcode+3)*CHANNELNUMS,0,OffsetValue,192);
 }
 
 void PresetRecovery(void)
 {
 	uint8_t i;
 	uint8_t TD[2];
-	uint8_t PresetValue[192];
+	uint8_t PresetValue[CHANNELNUMS];
 	if(m24xx_read(EEPROM_24XX256,0xf17,0,TD,2)==I2C_NO_ERR)
 	{
 		if(TD[1]==0xff)
 		{
-			if(m24xx_read(EEPROM_24XX256,0X6C29,0,PresetValue,192)==I2C_NO_ERR)			 //读取先前场景号
+			if(m24xx_read(EEPROM_24XX256,0X6C29,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)			 //读取先前场景号
 			{
-				for(i=0;i<192;i++)
+				for(i=0;i<CHANNELNUMS;i++)
 				{
 					ChannelData[i].PrePreset = PresetValue[i];	
 				} 
 			}
-			if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*192,0,PresetValue,192)==I2C_NO_ERR)				//读取掉电前场景的亮度
+			if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)				//读取掉电前场景的亮度
 			{
-				for(i=0;i<192;i++)
+				for(i=0;i<CHANNELNUMS;i++)
 				{
 					ChannelData[i].GoalLevel = PresetValue[i];
 					ChannelData[i].timeToGoal = TD[0]*50;
@@ -448,7 +449,7 @@ void PresetRecovery(void)
 		{
 			if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+1)*192,0,PresetValue,192))
 			{	
-				for(i=0;i<192;i++)
+				for(i=0;i<CHANNELNUMS;i++)
 				{
 					ChannelData[i].GoalLevel = PresetValue[i];
 					ChannelData[i].timeToGoal = TD[0]*50;
@@ -458,9 +459,9 @@ void PresetRecovery(void)
 			else if(TD[1]==0x81)
 			{
 				Tpud = TD[0];//上电延时
-				if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*192,0,PresetValue,192))
+				if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*CHANNELNUMS,0,PresetValue,CHANNELNUMS))
 				{	
-					for(i=0;i<192;i++)
+					for(i=0;i<CHANNELNUMS;i++)
 					{
 						ChannelData[i].GoalLevel = PresetValue[i];
 						ChannelData[i].timeToGoal = 2;
@@ -471,8 +472,8 @@ void PresetRecovery(void)
 				{
 					if(TD[1]<xcode)
 					{
-						if(m24xx_read(EEPROM_24XX256,0xf29+TD[1]*192,0,PresetValue,192)==I2C_NO_ERR);
-						for(i=0;i<192;i++)
+						if(m24xx_read(EEPROM_24XX256,0xf29+TD[1]*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR);
+						for(i=0;i<CHANNELNUMS;i++)
 						{
 							ChannelData[i].GoalLevel = PresetValue[i+1];
 							ChannelData[i].timeToGoal = TD[0]*50;

@@ -14,6 +14,7 @@
 #include "dali_master.h"
 
 #include "sft_tmr.h"
+#include "sft_time_apps.h"
 
 volatile uint32_t UARTStatus;
 volatile uint32_t  UARTTxEmpty = 1;
@@ -279,7 +280,7 @@ void UARTSend(uint8_t *BufferPtr, uint32_t Length)
                        RS485_BeginSend, (void *)0,
                        3,SFT_TIMER_FLAG_ONE_SHOT
                     );
-    
+#if 0    
 	LPC_GPIO3->DATA &= ~(1<<3);
     DelayMS(3);				 //不等的会漏数据
     while ( Length != 0 )
@@ -302,6 +303,7 @@ void UARTSend(uint8_t *BufferPtr, uint32_t Length)
     while ((LPC_UART->LSR & 0x40) == 0);
     LPC_GPIO3->DATA |=  (1<<3);
 //   LPC_GPIO3->DATA &= ~(1<<3);
+#endif
 	return;
 }
 #if 0

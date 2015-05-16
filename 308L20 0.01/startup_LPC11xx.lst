@@ -359,11 +359,10 @@ ARM Macro Assembler    Page 6
               00000000 
               00000200 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
-ork --depend=.\debug\startup_lpc11xx.d -o.\debug\startup_lpc11xx.o -I"E:\Progra
-m Files (x86)\keil\ARM\RV31\INC" -I"E:\Program Files (x86)\keil\ARM\CMSIS\Inclu
-de" -I"E:\Program Files (x86)\keil\ARM\Inc\NXP\LPC11xx" --predefine="__UVISION_
-VERSION SETA 514" --list=.\startup_lpc11xx.lst startup_LPC11xx.s
+Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=.\debug\
+startup_lpc11xx.d -o.\debug\startup_lpc11xx.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\
+ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LPC11xx --list=.\startup_lpc11xx.lst st
+artup_LPC11xx.s
 
 
 
@@ -839,4 +838,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-382 symbols in table
+381 symbols in table

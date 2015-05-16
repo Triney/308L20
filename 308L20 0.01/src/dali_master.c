@@ -14,6 +14,7 @@
 #include "sft_tmr.h"
 #include "sft_time_apps.h"
 #include "keyscan.h"
+#include "Apps.h"
 /***********************************************************/
 /* Configuration flags                                     */
 /***********************************************************/
@@ -183,7 +184,7 @@ const uint8_t LDS_Power[]=
 	174,179,184,189,194,200,205,211,216,223,229,235,241,248,254	
 } ;
 
-channelDataType	ChannelData[192];
+channelDataType	ChannelData[CHANNELNUMS];
 
 static volatile bool         uartForwardFrameReceived;
 static volatile uint16_t     uartForwardFrame;
@@ -1238,7 +1239,7 @@ void DALI_Thread(void)
     LED_config();
 	DisableSend485();
     
-    Sft_Init_all_timers();
+    Sft_Init_all_timers((void *) 0);
     while (1)
     {
         __WFI();

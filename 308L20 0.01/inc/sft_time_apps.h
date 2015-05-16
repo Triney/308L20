@@ -3,7 +3,8 @@
 
 #include "sft_tmr.h"
 
-extern void Sft_Init_all_timers(void);
+extern void Sft_Init_all_timers(void *parameter);
+extern void RS485_BeginSend(void *parameter);
 
 #endif
 

@@ -1,4 +1,5 @@
 #include "PanDali_cmd.h"
+#include "Apps.h"
 
 
 void DimIns_Preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
@@ -11,7 +12,7 @@ void DimIns_Preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
         ||(NULL_PTR == ALvalue))
         return;
     
-    for(indx=0;indx<192;indx++)											   //Ñ°ÕÒ³¡¾°Æ«ÒÆÁ¿
+    for(indx=0;indx<CHANNELNUMS;indx++)											   //Ñ°ÕÒ³¡¾°Æ«ÒÆÁ¿
     {
         if(IsAreaAccept(indx))
         {
@@ -28,7 +29,7 @@ void DimIns_Preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
         return;
     }
     
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*192,0,PresetValue,192) != I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*CHANNELNUMS,0,PresetValue,CHANNELNUMS) != I2C_NO_ERR)
     {
 		return;        
     }
@@ -40,7 +41,7 @@ void DimIns_Preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
         dimTime=0xffff;
     }
     
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(PresetValue[indx]!=0)
         {
@@ -63,14 +64,14 @@ void DimIns_Preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
         PresetValue[indx] = ChannelData[indx].GoalLevel;
     }
     
-    m24xx_write(EEPROM_24XX256,Preset_addr+(xcode+2)*192,0,PresetValue,192);
+    m24xx_write(EEPROM_24XX256,Preset_addr+(xcode+2)*CHANNELNUMS,0,PresetValue,CHANNELNUMS);
     
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         PresetValue[indx]=ChannelData[indx].PrePreset;
     }
     
-    m24xx_write(EEPROM_24XX256,0X6c29,0,PresetValue,192);    
+    m24xx_write(EEPROM_24XX256,0X6c29,0,PresetValue,CHANNELNUMS);    
     return;
 }
 
@@ -80,7 +81,7 @@ void DimIns_Fade_area_to_off(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t 
     uint8_t indx;
     uint8_t AreaLink[4];
     uint32_t dimTime;
-    for(indx=0;indx<192;indx++)											   //Ñ°ÕÒ³¡¾°Æ«ÒÆÁ¿
+    for(indx=0;indx<CHANNELNUMS;indx++)											   //Ñ°ÕÒ³¡¾°Æ«ÒÆÁ¿
     {
         if(IsAreaAccept(indx))
         {
@@ -97,7 +98,7 @@ void DimIns_Fade_area_to_off(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t 
         return;
     }
     
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -159,9 +160,9 @@ void DimIns_Fade_area_to_off(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t 
 void DimIns_Program_level_to_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
 {
     uint8_t indx;
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
                                         {
@@ -173,7 +174,7 @@ void DimIns_Program_level_to_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, u
             }
         }
     }
-    m24xx_write(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*192,0,PresetValue,192);
+    m24xx_write(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*CHANNELNUMS,0,PresetValue,CHANNELNUMS);
     return;
 }
     
@@ -189,9 +190,9 @@ void DimIns_Reset_to_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *
         dimTime=0xffff;
     }
     
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {
@@ -213,9 +214,9 @@ void DimIns_Panic(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
 {
     uint8_t indx;
     uint32_t dimTime;
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+1)*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+1)*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {
@@ -244,9 +245,9 @@ void DimIns_Un_panic(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue
         dimTime=0xffff;
     }
     
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+(xcode+2)*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {
@@ -266,9 +267,9 @@ void DimIns_Un_panic(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue
 void DimIns_Set_air_link(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
 {
     uint8_t indx;
-    if(m24xx_read(EEPROM_24XX256,AreaLink_addr,0,ALvalue,768)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,AreaLink_addr,0,ALvalue,CHANNELNUMS * 4)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {
@@ -288,7 +289,7 @@ void DimIns_Set_air_link(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALv
                 ALvalue[indx*4+3]=0;
             }
         }
-        m24xx_write(EEPROM_24XX256,AreaLink_addr,0,ALvalue,768);
+        m24xx_write(EEPROM_24XX256,AreaLink_addr,0,ALvalue,CHANNELNUMS * 4);
     }
     return;
 }
@@ -297,21 +298,21 @@ void DimIns_Clear_air_link(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *A
 {
 						
     uint8_t indx;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         ALvalue[indx*4]=0xff;
         ALvalue[indx*4+1]=0;
         ALvalue[indx*4+2]=0;
         ALvalue[indx*4+3]=0;
     }
-    m24xx_write(EEPROM_24XX256,AreaLink_addr,0,ALvalue,768);
+    m24xx_write(EEPROM_24XX256,AreaLink_addr,0,ALvalue,CHANNELNUMS * 4);
     return;
 }
 
 void DimIns_Save_current_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
 {
     uint8_t indx;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -323,9 +324,9 @@ void DimIns_Save_current_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8
         }
     }
     
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         if(IsAreaAccept(indx))
         {
             if(IsAppendAreaAccept(indx))
@@ -335,7 +336,7 @@ void DimIns_Save_current_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8
             }
         }
     }
-    m24xx_write(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*192,0,PresetValue,192);
+    m24xx_write(EEPROM_24XX256,Preset_addr+UARTBuffer[4]*CHANNELNUMS,0,PresetValue,CHANNELNUMS);
     return;
 }
 
@@ -343,9 +344,9 @@ void DimIns_Fade_channel_to_toggle_preset(uint8_t *UARTBuffer, uint8_t *PresetVa
 {
     uint8_t indx;
     uint32_t dimTime;
-    if(m24xx_read(EEPROM_24XX256,Preset_addr+xcode*192,0,PresetValue,192)==I2C_NO_ERR)
+    if(m24xx_read(EEPROM_24XX256,Preset_addr+xcode*CHANNELNUMS,0,PresetValue,CHANNELNUMS)==I2C_NO_ERR)
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {
@@ -375,7 +376,7 @@ void DimIns_Request_channel_level(uint8_t *UARTBuffer, uint8_t *PresetValue, uin
     void (*pDaliSend)(uint16_t forwardFrame);
     void (*pDecodeDaliData)(void);
     
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {   
@@ -452,7 +453,7 @@ void DimIns_Request_current_preset(uint8_t *UARTBuffer, uint8_t *PresetValue, ui
 {
     uint8_t indx;
 //    uint32_t dimTime;
-     for(indx=0;indx<192;indx++)
+     for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {	
@@ -488,7 +489,7 @@ void DimIns_Fade_to_off(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALva
     if(UARTBuffer[5]==0xff)
     {
 
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {	
@@ -511,7 +512,7 @@ void DimIns_Fade_to_off(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALva
     }
     else
     {
-        for(indx=0;indx<192;indx++)
+        for(indx=0;indx<CHANNELNUMS;indx++)
         {
             if(IsAreaAccept(indx))
             {	
@@ -551,7 +552,7 @@ void DimIns_Fade_to_on(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALval
         dimTime=0xffff;
     }
 
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {	
@@ -581,7 +582,7 @@ void DimIns_Stop_fade(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalu
 {
     uint8_t indx;
 //    uint32_t dimTime;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
          {
@@ -607,7 +608,7 @@ void DimIns_Fade_channel_level_0_1_sec(uint8_t *UARTBuffer, uint8_t *PresetValue
 {
     uint8_t indx;
 //    uint32_t dimTime;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -632,7 +633,7 @@ void DimIns_Fade_channel_level_1_sec(uint8_t *UARTBuffer, uint8_t *PresetValue, 
 {
     uint8_t indx;
     uint32_t dimTime;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -664,7 +665,7 @@ void DimIns_Fade_channel_level_1_min(uint8_t *UARTBuffer, uint8_t *PresetValue, 
         dimTime=0xffff;
     }
 
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -688,7 +689,7 @@ void DimIns_Fade_channel_level_1_min(uint8_t *UARTBuffer, uint8_t *PresetValue, 
 void DimIns_Preset_offset_and_bank(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalue)
 {
     uint8_t indx;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {	
         if(IsAreaAccept(indx))
         {
@@ -708,7 +709,7 @@ void DimIns_Inc_level(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalu
 {
     uint8_t indx;
 //    uint32_t dimTime;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
     if(IsAreaAccept(indx))
     {
@@ -738,7 +739,7 @@ void DimIns_Dec_level(uint8_t *UARTBuffer, uint8_t *PresetValue, uint8_t *ALvalu
 {
     uint8_t indx;
 //    uint32_t dimTime;
-    for(indx=0;indx<192;indx++)
+    for(indx=0;indx<CHANNELNUMS;indx++)
     {
         if(IsAreaAccept(indx))
         {
@@ -887,13 +888,13 @@ void CmmssnIns_Setup(uint8_t *UARTBuffer, uint8_t *PresetValue)
         case 0x09:
             if(UARTBuffer[5] == 1)
             {
-                for(indx=0;indx<192;indx++)
+                for(indx=0;indx<CHANNELNUMS;indx++)
                 {
                     PresetValue[indx]=0xff;	
                 }
                 for(indx=0;indx<4;indx++)
                 {
-                    m24xx_write(EEPROM_24XX256,0X6629+indx*192,0,PresetValue,192);
+                    m24xx_write(EEPROM_24XX256,0X6629+indx*CHANNELNUMS,0,PresetValue,CHANNELNUMS);
                 }
             }
             Get_Channel_Param();
@@ -1110,8 +1111,8 @@ uint8_t ucMaxCmmssnInsNum = sizeof(stCmmssnIns)/sizeof(CommissioningIns_stru);
 void ProcessCMD(void)
 {
 //	uint16_t indx;
-	uint8_t PresetValue[192];
-	uint8_t ALvalue[768];
+	uint8_t PresetValue[CHANNELNUMS];
+	uint8_t ALvalue[CHANNELNUMS *4];
 //	uint8_t AreaLink[4];
     uint8_t i;
 //	uint32_t 	Temp_value;
