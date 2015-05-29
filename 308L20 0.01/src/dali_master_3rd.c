@@ -1,3 +1,4 @@
+#if 0
 #include <stdbool.h>
 #include "lpc11xx.h"
 #include "system_LPC11xx.h"
@@ -643,3 +644,6 @@ void Enumerate_DALI_Ballast_3rd(void)
 		}
 	  }
 	}
+#endif
+
+

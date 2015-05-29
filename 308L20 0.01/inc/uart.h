@@ -57,9 +57,12 @@
 
 #define UART_BUFFER_LEN     20
 
+#define RS485_START_SEND        (0x01<<31)
+
 extern volatile uint32_t UARTCount;
 extern          uint8_t     UARTSendBuf[BUFSIZE];
 extern          uint8_t    *pBuffer;
+
 
 typedef struct RS_485_send
 {

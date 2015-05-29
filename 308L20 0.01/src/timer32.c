@@ -98,7 +98,20 @@ void delay32Ms(uint8_t timer_num, uint32_t delayInMs)
 ** Returned value:	None
 ** 
 ******************************************************************************/
-//IRQ_Handle is located in the dali_master.c
+void TIMER32_0_IRQHandler(void)
+{
+    if ( LPC_TMR32B0->IR &0x01)
+    {
+        LPC_TMR32B1->IR = 1;			/* clear interrupt flag */
+        timer32_0_counter;
+    }
+    if ( LPC_TMR32B0->IR & (0x1<<4) )
+    {
+	    LPC_TMR32B0->IR = 0x1<<4;		// clear interrupt flag 
+	    timer32_0_capture++;
+    }    
+    return;
+}
 
 /******************************************************************************
 ** Function name:		TIMER32_1_IRQHandler

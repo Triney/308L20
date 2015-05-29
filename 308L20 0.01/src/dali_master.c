@@ -239,8 +239,7 @@ extern uint8_t aux_press,aux_release,xcode,Tpud;
 /***********************************************************/
 /* Local functions                                         */
 /***********************************************************/
-
-
+#if 0
 void DelayMS(uint32_t DelayTime)
 {
 	uint32_t time,i;
@@ -612,7 +611,7 @@ static uint8_t bitcount;
     	}
 	}
 }
-
+#endif
 /************************************************************************************************/
 /*	the following code is used to enumerate the dali ballast									*/
 /*	caculation:these are my codes and may have some bugs									*/
@@ -649,7 +648,7 @@ void ClearBuffer(CirBufType *DaliCirBuffer)
 {
 	DaliCirBuffer->read_index = DaliCirBuffer->save_index;
 }
-
+#if 0
 uint16_t AddressingLow8bit(uint32_t LongAddress)
 {
 	
@@ -738,6 +737,7 @@ static __inline void ProgramShortAddress(uint8_t ShortAddress)
 	}	
 		
 }
+#endif
 void EE_Block_Option(void)
 {
 	if(UARTBuffer[0]==0xfa)
@@ -855,7 +855,7 @@ void Check_Channel(void)
 		}
 	}
 }
-
+#if 0
 void Check_DALI_Send(void)
 {
 	uint16_t i;
@@ -1207,7 +1207,7 @@ void Set_Ballast_Param(uint8_t DALI_Channel)
         }
     }
 }
-
+#endif
 
 uint8_t CheckSum(uint8_t *buffer,uint8_t Num)
 {
@@ -1227,6 +1227,7 @@ uint8_t CheckSum(uint8_t *buffer,uint8_t Num)
 /* Public (exported) functions                             */
 /***********************************************************/
 
+#if 0
 void DALI_Thread(void)
 {
 	uint8_t nop_i ;
@@ -1526,6 +1527,6 @@ void DALI_Thread(void)
 		}
     }  
 }
-
+#endif
 		
 /* EOF */

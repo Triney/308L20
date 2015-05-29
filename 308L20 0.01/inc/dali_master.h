@@ -197,21 +197,28 @@ extern CirBufType DaliCirBuffer;
 extern CirBufType DaliCirBuffer_2nd;
 extern CirBufType DaliCirBuffer_3rd;
 
+#if 0
 void DelayMS(uint32_t DelayTime);
 uint16_t AddressingLow8bit(uint32_t LongAddress);
 uint16_t AddressingMiddle8bit(uint32_t LongAddress);
 uint16_t AddressingHigh8bit(uint32_t LongAddress);
-bool ReadBuffer(CirBufType *DaliCirBuffer,uint16_t* data);
+#endif
+extern bool WriteBuffer(CirBufType *DaliCirBuffer,uint16_t data);
+extern bool ReadBuffer(CirBufType *DaliCirBuffer,uint16_t* data);
+#if 0
 uint32_t DALI_ConvertForwardFrame(uint16_t forwardFrame) ;
 bool DALI_CheckWaitForAnswer(uint16_t forwardFrame)	   ;
 bool DALI_CheckRepeatCmd(uint16_t forwardFrame)		 ;
+#endif
 uint8_t CheckSum(uint8_t *buffer,uint8_t Num);
+#if 0
 extern void For_Decode(void);
-extern bool WriteBuffer(CirBufType *DaliCirBuffer,uint16_t data);
+
 extern void DALI_Send(uint16_t forwardFrame);
 extern void Enumerate_DALI_Ballast(void);
 extern void DALI_Thread(void);
 extern void Set_Ballast_Param(uint8_t DALI_Channel);
+#endif
 #endif /* _DALI_MASTER_H */
 
 /* EOF */

@@ -66,7 +66,7 @@ const uint8_t LDS_Power[]=
 /*----------------------------------------------*
  * ∫Í∂®“Â                                       *
  *----------------------------------------------*/
-void DALI_Thread(void)
+void Main_Thread(void)
 {
 	uint8_t nop_i ;
 	uint32_t aux_value;   

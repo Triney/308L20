@@ -130,13 +130,13 @@ void UART_IRQHandler(void)
         else
         {
             /* RS485线接收状态 */
-            LPC_GPIO3->DATA &= ~(1<<3);
+            LPC_GPIO3->DATA |=  (1<<3);
         }
     }
     else
     {
       UARTTxEmpty = 0;
-	  LPC_GPIO3->DATA &= ~(1<<3);
+	  LPC_GPIO3->DATA |=  (1<<3);
     }
   }
   return;
@@ -266,6 +266,9 @@ void UARTSend(uint8_t *BufferPtr, uint32_t Length)
     uint8_t i = 0;
     /* 需要发送的字节数 */
     g_SendNums = Length;
+
+    /* 设置标志位，表明没有开始发送 */
+    g_SendNums |= RS485_START_SEND;
     
     while(Length--)
     {
@@ -280,6 +283,8 @@ void UARTSend(uint8_t *BufferPtr, uint32_t Length)
                        RS485_BeginSend, (void *)0,
                        3,SFT_TIMER_FLAG_ONE_SHOT
                     );
+    if (MT_FULL != i)
+        mtimer_start(i);
 #if 0    
 	LPC_GPIO3->DATA &= ~(1<<3);
     DelayMS(3);				 //不等的会漏数据
