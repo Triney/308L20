@@ -93,6 +93,10 @@
 #define K2_ON()			{LPC_GPIO0->DATA &= ~(1<<7);}
 #define K3_ON()			{LPC_GPIO1->DATA &= ~(1<<9);}
 
+#define FlagBitIsChannelRepeat  (1<<0)
+#define FlagBitTrigOnBegin      (1<<1)      
+#define FlagBitTrigOffBegin     (1<<2)
+#define FlagBitRelayStateOn     (1<<3)
 
 #ifdef release
 	#define LED_on()             { LPC_GPIO3->DATA &= ~(1<<1); WDTFeed();}		//
@@ -168,25 +172,21 @@ typedef struct Dali_CIRBUF
 
 typedef struct channelDataType_tag
 {
-    uint8_t		dali_TX_flag;		//DALI通道发送标志位
 	uint8_t		GoalLevel;          //通道需要变化到的目标电平    
 	uint8_t		OringalLevel;		//通道变化前的电平
-	uint8_t 	PresetOffset;       //场景偏移量          
+	uint8_t 	PresetOffset;       //场景偏移量              
+    uint8_t		CurrentLevel;		//先前的DALI电平值
     
-    uint8_t		PrevDALILevel;		//先前的DALI电平值
 	uint8_t 	flag_bit;  			//bit0:重复（1yes，0no）
 	uint8_t		LogicChannel;		//逻辑通道号
-	uint8_t 	PrePreset;			//先前场景
-    
+	uint8_t 	PrePreset;			//先前场景    
 	uint8_t		MaxLevel;			//最大电平值
+	
 	uint8_t		AreaLink;			//区域连接值
-	uint8_t		SwitchLevel;		//开关电平值
-	uint8_t 	ShortAddr;			//短地址
-    
+	uint8_t		SwitchLevel;		//开关电平值    
 	uint8_t 	Area;				//所属区
 	uint8_t		AppendArea;			//附加区
-	uint8_t	 	DALI_Channel;		//所属的dali通道
-	uint16_t 	dali_data;			//需要发送的dali数据
+
 	uint16_t	PastedTime;			//已经经过的渐变时间
 	uint16_t	timeToGoal;	        //总共需要渐变的时间
 } channelDataType;

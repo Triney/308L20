@@ -7,35 +7,3 @@ F:\norya\308L20\308L20 0.01\dali_master.uvproj
 Project File Date:  05/08/2015
 
 <h2>Output:</h2>
-Build target 'R308L20'
-compiling sft_tmr_apps.c...
-src\sft_tmr_apps.c(83): error:  #42: operand types are incompatible ("void *" and "uint8_t")
-src\sft_tmr_apps.c(89): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(89): error:  #20: identifier "g_SendNums" is undefined
-src\sft_tmr_apps.c(89): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(92): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(102): error:  #42: operand types are incompatible ("void *" and "uint8_t")
-src\sft_tmr_apps.c(140): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
-compiling timer32.c...
-src\timer32.c(107): error:  #65: expected a ";"
-compiling timer16.c...
-compiling uart.c...
-src\uart.c(271): warning:  #61-D: integer operation result is out of range
-src\uart.c(271): warning:  #68-D: integer conversion resulted in a change of sign
-compiling dali_master.c...
-compiling dali_master_3rd.c...
-compiling dali_master_2nd.c...
-".\debug\dali_master.axf" - 4 Errors, 6 Warning(s).
-Target not created
-Build target 'R308L20'
-compiling sft_tmr_apps.c...
-src\sft_tmr_apps.c(83): error:  #42: operand types are incompatible ("void *" and "uint8_t")
-src\sft_tmr_apps.c(89): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(89): error:  #20: identifier "g_SendNums" is undefined
-src\sft_tmr_apps.c(89): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(92): warning:  #61-D: integer operation result is out of range
-src\sft_tmr_apps.c(102): error:  #42: operand types are incompatible ("void *" and "uint8_t")
-src\sft_tmr_apps.c(140): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "void (*)(void *)"
-compiling timer32.c...
-".\debug\dali_master.axf" - 3 Errors, 4 Warning(s).
-Target not created
